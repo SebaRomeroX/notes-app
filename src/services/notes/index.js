@@ -1,5 +1,7 @@
 import axios from "axios"
+// const route = 'https://joyful-horse-1e25cd.netlify.app/api/notes'
 const route = 'http://localhost:3001/api/notes'
+
 
 export const getAll = () => {
   return axios
@@ -11,10 +13,15 @@ export const getAll = () => {
     })
 }
 
-export const create = ({ content }) => {
-  console.log(content)
+export const create = ({ content }, { token }) => {
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`
+    }
+  }
+  
   return axios
-    .post(route, { content })
+    .post(route, { content }, config)
     .then(response => {
       const { data } = response
       return data
