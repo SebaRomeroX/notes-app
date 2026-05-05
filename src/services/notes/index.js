@@ -1,6 +1,6 @@
 import axios from "axios"
-// const route = 'https://joyful-horse-1e25cd.netlify.app/api/notes'
-const route = 'http://localhost:3001/api/notes'
+const route = 'https://joyful-horse-1e25cd.netlify.app/api/notes'
+// const route = 'http://localhost:3001/api/notes'
 
 
 export const getAll = () => {
